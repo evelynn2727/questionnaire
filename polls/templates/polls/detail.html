@@ -10,5 +10,12 @@
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 {% endfor %}
+{# static display choices radio button #}
+{#     <input type="radio" name="choice" id="choiceA" value="{{ a_text }}">#}
+{#        <label>{{ question.a_text }}</label><br>#}
+{#     <input type="radio" name="choice" id="choiceB" value="{{ b_text }}">#}
+{#        <label>{{ question.b_text }}</label><br>#}
+{#     <input type="radio" name="choice" id="choiceC" value="{{ c_text }}">#}
+{#        <label>{{ question.c_text }}</label><br>#}
 <input type="submit" value="Vote">
 </form>

@@ -4,6 +4,10 @@
 {% for choice in question.choice_set.all %}
     <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
+{# static display choices elements #}
+{#    <li>{{ question.a_text }} -- {{ choice.vote }} vote{{choice.votes|pluralize }}</li>#}
+{#     <li>{{ question.b_text }} -- {{ choice.vote }} vote{{choice.votes|pluralize }}</li>#}
+{#     <li>{{ question.c_text }} -- {{ choice.vote }} vote{{choice.votes|pluralize }}</li>#}
 </ul>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
