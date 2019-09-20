@@ -41,9 +41,6 @@ def vote(request, question_id):
     question=get_object_or_404(Question, pk=question_id)
     try:
         selected_choice=question.choice_set.get(pk=request.POST['choice'])
-        # question.a_text = question.choice_set.get(pk=request.POST['choice'])
-        # question.b_text = question.choice_set.get(pk=request.POST['choice'])
-        # question.c_text = question.choice_set.get(pk=request.POST['choice'])
     except(KeyError, Choice.DoesNotExist):
         return render(request, 'polls/detail.html', {
             'question':question,
@@ -52,12 +49,6 @@ def vote(request, question_id):
     else:
         selected_choice.votes+=1
         selected_choice.save()
-        # question.a_text.votes+=1
-        # question.a_text.save()
-        # question.b_text.votes+=1
-        # question.b_text.save()
-        # question.c_text.votes+=1
-        # question.c_text.save()
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 
